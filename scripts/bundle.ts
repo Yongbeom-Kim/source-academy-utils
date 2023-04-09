@@ -19,5 +19,5 @@ async function bundle_types() {
 
 export async function main() {
   await bundle_esbuild();
-  //   await bundle_types();
+  await bundle_types();
 }
