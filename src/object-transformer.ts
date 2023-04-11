@@ -9,7 +9,14 @@ export function objectToLinkedList<S extends Key, T>(
   object: Record<S, T>
 ): AlternatingLinkedList<S, T> {
   let result: AlternatingLinkedList<S, T> = null;
+
+  // We try to traverse the object in revere order to preserve order in resulting linked list.
+  const stack: S[] = [];
   for (const key in object) {
+    stack.push(key);
+  }
+
+  for (const key of stack.reverse()) {
     result = [key, [object[key], result]];
   }
 

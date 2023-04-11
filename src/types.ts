@@ -1,5 +1,5 @@
 export type LinkedList<T> = [T, LinkedList<T>] | null;
 export type AlternatingLinkedList<S, T> =
-  | [S, AlternatingLinkedList<T, S>]
+  | [S, [T, AlternatingLinkedList<S, T>]]
   | null;
 export type Key = string | number | symbol;
